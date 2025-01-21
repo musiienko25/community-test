@@ -38,18 +38,21 @@ const Post: React.FC<PostProps> = ({ id, title, content, comments }) => {
   };
 
   return (
-    <div className="post">
-      <h2>{title}</h2>
-      <p>{content}</p>
-      <form onSubmit={handleAddComment}>
+    <div className="post bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <h2 className="text-xl font-bold mb-2">{title}</h2>
+      <p className="text-gray-700 text-base mb-4">{content}</p>
+      <form onSubmit={handleAddComment} className="mb-4">
         <input
           type="text"
           placeholder="Add a comment"
           value={commentContent}
           onChange={(e) => setCommentContent(e.target.value)}
           required
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
-        <button type="submit">Comment</button>
+        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">
+          Comment
+        </button>
       </form>
       <CommentList comments={postComments} onReply={addComment} />
     </div>
