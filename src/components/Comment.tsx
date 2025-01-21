@@ -10,7 +10,7 @@ interface CommentProps {
   onReply: (postId: number, parentId: number, content: string) => void;
 }
 
-const Comment: React.FC<CommentProps> = ({ id, postId, parentId, content, onReply }) => {
+const Comment: React.FC<CommentProps> = ({ id, postId, content, onReply }) => {
   const [replyContent, setReplyContent] = useState('');
 
   const handleReply = (e: React.FormEvent) => {
