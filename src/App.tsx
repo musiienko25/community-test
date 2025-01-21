@@ -1,9 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import PostList from './components/PostList';
-import CreatePost from './components/CreatePost';
+import CommunityPage from './pages/CommunityPage';
 import { mockPosts } from './mockData';
 
 function App() {
@@ -21,11 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Community Page</h1>
-      <CreatePost onAddPost={addPost} />
-      <PostList posts={posts} />
-
-
+      <CommunityPage />
     </div>
   )
 }
