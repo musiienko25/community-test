@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CommentList from './CommentList';
 import CustomInput from './CustomInput';
+import CustomButton from './CustomButton';
 
 interface PostProps {
   id: number;
@@ -49,9 +50,9 @@ const Post: React.FC<PostProps> = ({ id, title, content, comments }) => {
           onChange={(e) => setCommentContent(e.target.value)}
           required
         />
-        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">
+        <CustomButton type="submit" className="mt-2" color="green">
           Comment
-        </button>
+        </CustomButton>
       </form>
       <CommentList comments={postComments} onReply={addComment} />
     </div>
