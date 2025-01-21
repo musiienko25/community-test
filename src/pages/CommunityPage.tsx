@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PostList from '../components/PostList';
 import CreatePost from '../components/CreatePost';
 import { mockPosts } from '../mockData';
