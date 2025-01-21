@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface CustomButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
