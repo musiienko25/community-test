@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import CustomInput from './CustomInput';
-import CustomButton from './CustomButton';
+import Input from './Input';
+import Button from './Button';
 
 interface CreatePostProps {
   onAddPost: (title: string, content: string) => void;
@@ -21,22 +21,22 @@ const CreatePost: React.FC<CreatePostProps> = ({ onAddPost }) => {
 
   return (
     <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-      <CustomInput
+      <Input
         placeholder="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         required
       />
-      <CustomInput
+      <Input
         placeholder="Content"
         value={content}
         onChange={(e) => setContent(e.target.value)}
         required
         isTextarea
       />
-      <CustomButton type="submit" className="mt-4" color="blue">
+      <Button type="submit" className="mt-4" color="blue">
         Add Post
-      </CustomButton>
+      </Button>
     </form>
   );
 };

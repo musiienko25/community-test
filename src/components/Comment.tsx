@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import CustomInput from './CustomInput';
-import CustomButton from './CustomButton';
+import Input from './Input';
+import Button from './Button';
 
 interface CommentProps {
   id: number;
@@ -25,15 +25,15 @@ const Comment: React.FC<CommentProps> = ({ id, postId, parentId, content, onRepl
     <div className="comment bg-gray-100 shadow-inner rounded px-4 pt-2 pb-2 mb-2">
       <p className="text-gray-800 text-sm mb-2">{content}</p>
       <form onSubmit={handleReply} className="mb-2">
-        <CustomInput
+        <Input
           placeholder="Reply"
           value={replyContent}
           onChange={(e) => setReplyContent(e.target.value)}
           required
         />
-        <CustomButton type="submit" className="mt-1" color="yellow">
+        <Button type="submit" className="mt-1" color="yellow">
           Reply
-        </CustomButton>
+        </Button>
       </form>
     </div>
   );

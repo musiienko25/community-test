@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CommentList from './CommentList';
-import CustomInput from './CustomInput';
-import CustomButton from './CustomButton';
+import Input from './Input';
+import Button from './Button';
 
 interface PostProps {
   id: number;
@@ -44,15 +44,15 @@ const Post: React.FC<PostProps> = ({ id, title, content, comments }) => {
       <h2 className="text-xl font-bold mb-2">{title}</h2>
       <p className="text-gray-700 text-base mb-4">{content}</p>
       <form onSubmit={handleAddComment} className="mb-4">
-        <CustomInput
+        <Input
           placeholder="Add a comment"
           value={commentContent}
           onChange={(e) => setCommentContent(e.target.value)}
           required
         />
-        <CustomButton type="submit" className="mt-2" color="green">
+        <Button type="submit" className="mt-2" color="green">
           Comment
-        </CustomButton>
+        </Button>
       </form>
       <CommentList comments={postComments} onReply={addComment} />
     </div>

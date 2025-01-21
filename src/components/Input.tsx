@@ -9,7 +9,7 @@ interface CustomInputProps {
   isTextarea?: boolean;
 }
 
-const CustomInput: React.FC<CustomInputProps> = ({
+const Input: React.FC<CustomInputProps> = ({
   type = 'text',
   placeholder,
   value,
@@ -39,4 +39,4 @@ const CustomInput: React.FC<CustomInputProps> = ({
   );
 };
 
-export default CustomInput;
+export default Input;
