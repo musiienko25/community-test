@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import PostList from '../components/PostList';
 import CreatePost from '../components/CreatePost';
 import { mockPosts } from '../mockData';
@@ -20,7 +20,7 @@ interface PostProps {
 const CommunityPage: React.FC = () => {
   const [posts, setPosts] = useState<PostProps[]>(mockPosts);
 
-  const addPost = (title: string, content: string) => {
+  const addPost = useCallback((title: string, content: string) => {
     const newPost: PostProps = {
       id: posts.length + 1, 
       title,
@@ -28,7 +28,7 @@ const CommunityPage: React.FC = () => {
       comments: [], 
     };
     setPosts([...posts, newPost]);
-  };
+  }, [posts]);
 
   return (
     <div className="App">
