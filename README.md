@@ -7,7 +7,7 @@ This template provides a minimal setup to get React working in Vite with HMR and
 ```js
 npm install
 ```
-- Start a project by command:
+- Start the project by command:
 
 ```js
 npm run dev
