@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CustomInput from './CustomInput';
 
 interface CommentProps {
   id: number;
@@ -23,13 +24,11 @@ const Comment: React.FC<CommentProps> = ({ id, postId, parentId, content, onRepl
     <div className="comment bg-gray-100 shadow-inner rounded px-4 pt-2 pb-2 mb-2">
       <p className="text-gray-800 text-sm mb-2">{content}</p>
       <form onSubmit={handleReply} className="mb-2">
-        <input
-          type="text"
+        <CustomInput
           placeholder="Reply"
           value={replyContent}
           onChange={(e) => setReplyContent(e.target.value)}
           required
-          className="shadow appearance-none border rounded w-full py-1 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
         <button type="submit" className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline mt-1">
           Reply
